@@ -34,3 +34,17 @@ export interface HashTableEntry {
     key: string;
     value: any;
 }
+
+export interface TreeNode {
+    value: any;
+    parent?: TreeNode;
+    children: TreeNode[];
+    top?: TreeNode;
+    addNode(value: any): TreeNode;
+    depthFirstSearch(comperator: Comperator): TreeNode | undefined;
+    breadthFirstSearch(comperator: Comperator): TreeNode | undefined;
+}
+
+export interface Comperator {
+    (node: TreeNode): boolean;
+}
